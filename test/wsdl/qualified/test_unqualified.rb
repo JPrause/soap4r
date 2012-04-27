@@ -69,7 +69,7 @@ class TestUnqualified < Test::Unit::TestCase
       gen.opt['driver'] = nil
       gen.opt['force'] = true
       gen.run
-      require 'lp.rb'
+      require './lp.rb'
     ensure
       $".delete('lp.rb')
       Dir.chdir(backupdir)
