@@ -1,4 +1,5 @@
-require 'rake/gempackagetask'
+require 'rubygems'
+require 'rubygems/package_task'
 require 'rake/testtask'
 
 task :default => 'test:deep'
@@ -7,7 +8,7 @@ task :default => 'test:deep'
 ## Gem Packaging
 ## ---------------------------------------------------------------------------------------------------- ##
 load 'soap4r.gemspec'
-Rake::GemPackageTask.new(SPEC) do |pkg|
+Gem::PackageTask.new(SPEC) do |pkg|
   pkg.need_zip = true
   pkg.need_tar = true
 end
