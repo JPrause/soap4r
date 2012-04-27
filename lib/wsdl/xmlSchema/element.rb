@@ -98,7 +98,7 @@ class Element < Info
       end
     when FormAttrName
       @form = value.source
-      if @form != 'qualified' and @name.namespace
+      if @form != 'qualified' and @name and @name.namespace
         @name = XSD::QName.new(nil, @name.name)
       end
       @form
