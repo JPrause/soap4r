@@ -542,7 +542,7 @@ module Mapping
 
     def class_schema_variable(sym, klass)
       var = "@@#{sym}"
-      klass.class_variables.include?(var) ? klass.class_eval(var) : nil
+      klass.class_variables.any? { |v| v.to_s == var } ? klass.class_eval(var) : nil
     end
 
     def protect_mapping(opt)

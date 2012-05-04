@@ -44,9 +44,8 @@ class ClassNameCreator
   end
 
   def check_classname(name)
-    if Object.constants.include?(name)
-      warn("created definition re-opens an existing toplevel class: #{name}.  consider to use --module_path option of wsdl2ruby.rb")
-    end
+    cname = Object.constants.detect { |c| c.to_s == name }
+    warn("created definition re-opens an existing toplevel class: #{name}.  consider to use --module_path option of wsdl2ruby.rb") if cname
   end
 end
 
