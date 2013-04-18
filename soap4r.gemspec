@@ -22,4 +22,4 @@ SOAP4R_SPEC = Gem::Specification.new do |s|
 
   # don't reference the test until we see it execute fully and successfully
   # s.test_file = "test/runner.rb"
-end
+end unless defined?(SOAP4R_SPEC)
