@@ -8,7 +8,7 @@ task :default => 'test:deep'
 ## Gem Packaging
 ## ---------------------------------------------------------------------------------------------------- ##
 load 'soap4r.gemspec'
-Gem::PackageTask.new(SPEC) do |pkg|
+Gem::PackageTask.new(SOAP4R_SPEC) do |pkg|
   pkg.need_zip = true
   pkg.need_tar = true
 end
