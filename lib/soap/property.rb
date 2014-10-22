@@ -76,7 +76,7 @@ class Property
   
   def load(stream)
     key_prefix = ""
-    stream = stream.lines if stream.respond_to?(:lines) # RubyJedi: compatible with Ruby 1.8.6 and above
+    stream = stream.each_line.to_a
     stream.each_with_index do |line, lineno|
       line.sub!(/\r?\n\z/u, '')
       case line
