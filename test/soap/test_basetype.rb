@@ -887,8 +887,7 @@ class TestSOAP < Test::Unit::TestCase
       "http://foo",
       "http://foo/bar/baz",
       "http://foo/bar#baz",
-      "http://foo/bar%20%20?a+b",
-      "HTTP://FOO/BAR%20%20?A+B",
+      "http://foo/bar%20%20?a+b"
     ]
     targets.each do |str|
       assert_parsed_result(SOAP::SOAPAnyURI, str)
