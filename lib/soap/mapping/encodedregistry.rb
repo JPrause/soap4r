@@ -411,8 +411,11 @@ private
   end
 
   def addextend2soap(node, obj)
-    return if obj.is_a?(Symbol) or obj.is_a?(Fixnum)
-    list = (class << obj; self; end).ancestors - obj.class.ancestors
+    begin
+      list = (class << obj; self; end).ancestors - obj.class.ancestors
+    rescue TypeError => err
+      return
+    end
     unless list.empty?
       node.extraattr[RubyExtendName] = list.collect { |c|
         name = c.name
